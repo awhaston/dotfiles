@@ -24,5 +24,8 @@ brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 brew install --cask font-roboto-mono-nerd-font
 
+# Install zsh-autocomplete
+brew install zsh-autosuggestions
+
 # Calling next script
 ~/install.sh
