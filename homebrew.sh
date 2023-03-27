@@ -23,3 +23,6 @@ brew install node@18
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 brew install --cask font-roboto-mono-nerd-font
+
+# Calling next script
+~/install.sh
