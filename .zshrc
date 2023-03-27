@@ -10,3 +10,7 @@ alias -g push="git push"
 alias -g pull="git pull"
 alias -g fetch="git fetch"
 alias -g ga="git add"
+alias projects="cd ~/Projects"
+alias dotfiles="cd ~/.dotfiles"
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
