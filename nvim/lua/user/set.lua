@@ -23,6 +23,4 @@ opt.scrolloff = 8
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
-opt.updatetime= 50
-
-opt.colorcolumn = "80"
+opt.updatetime = 50
