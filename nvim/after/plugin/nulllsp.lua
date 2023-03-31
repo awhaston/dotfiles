@@ -27,6 +27,8 @@ local callback = function()
     })
 end,
 
+vim.cmd('map <Leader>f :lua vim.lsp.buf.format(nil, 10000)<CR>')
+
 null_ls.setup({
     sources = {
         null_ls.builtins.diagnostics.eslint,
