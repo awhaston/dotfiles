@@ -46,7 +46,7 @@ return require('packer').startup(function(use)
 
     -- Formatter
     use 'jose-elias-alvarez/null-ls.nvim'
-    
+
     -- Show git changes on side
     use {
         'lewis6991/gitsigns.nvim',
@@ -65,7 +65,13 @@ return require('packer').startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
-    
+
     -- Show lines on indents
     use "lukas-reineke/indent-blankline.nvim"
+
+    -- Cool Status bar
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 end)
