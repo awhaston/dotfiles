@@ -74,4 +74,7 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+
+    -- Toggle Terminal
+    use { "akinsho/toggleterm.nvim", tag = '*'}
 end)
