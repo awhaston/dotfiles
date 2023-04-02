@@ -13,5 +13,6 @@ alias -g gwta="git worktree add"
 alias -g ga="git add"
 alias projects="cd ~/Projects"
 alias dotfiles="cd ~/.dotfiles"
+alias ll="ls -l"
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
