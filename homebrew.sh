@@ -18,6 +18,9 @@ brew install --cask font-roboto-mono-nerd-font
 # Install Neovim
 brew install neovim
 
+# Install ripgrep for neovim
+brew install ripgrep
+
 # Install Node Version 18
 brew install node@18
 
