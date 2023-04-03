@@ -77,4 +77,7 @@ return require('packer').startup(function(use)
 
     -- Toggle Terminal
     use { "akinsho/toggleterm.nvim", tag = '*'}
+
+    -- Friendly Snippets
+    use "rafamadriz/friendly-snippets"
 end)
