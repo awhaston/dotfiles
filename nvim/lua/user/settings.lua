@@ -26,7 +26,3 @@ opt.isfname:append("@-@")
 opt.updatetime = 50
 
 opt.colorcolumn = "80"
-
--- Remap Keys
-vim.g.mapleader = " ";
-vim.keymap.set("n", "<leader>p", vim.cmd.Ex);
