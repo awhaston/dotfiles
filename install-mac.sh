@@ -12,3 +12,6 @@ ln -s ~/.dotfiles/.zshrc ~
 npm install -g typescript
 npm install -g nodemon
 npm install -g neovim
+
+# Add .gitignore to globalscope
+git config --global core.excludesfile ~/.dotfiles/.gitignore
