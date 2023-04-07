@@ -5,10 +5,10 @@ This is my dotfiles for my terminal dev enviroment
 For now the install scripts are meant for macOS zsh homebrew enviroment
 
 ### Install Guide
-Clone into home directory
-If using homebrew run homebrew.sh (this will run install.sh)
-else use install.sh
-This should set all symbolic links and install required npm packages
+Clone into home directory ~/.dotfiles  
+If using homebrew run homebrew.sh (this will run install.sh)  
+else use install.sh  
+Install.sh set all symbolic links and install required npm packages  
 
 ### Apps Installed via homebrew
 
