@@ -8,6 +8,8 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 # Set Link for zsh
 ln -s ~/.dotfiles/.zshrc ~
 
+ln -s ~/.dotfiles/.gitconfig ~
+
 # Install global npm packages
 npm install -g typescript
 npm install -g nodemon
