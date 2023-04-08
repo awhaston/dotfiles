@@ -1,0 +1,5 @@
+[user]
+	name = Wyatt Haston
+	email = awhaston@icloud.com
+[core]
+	excludesfile = /Users/wyatthaston/.dotfiles/.gitignore
