@@ -1,11 +1,8 @@
 local null_ls = require("null-ls")
 
 -- code action sources
-<<<<<<< HEAD
 local code_actions = null_ls.builtins.code_actions
-=======
 -- local code_actions = null_ls.builtins.code_actions
->>>>>>> ea1b70a4420ae9bfe37902e47dfa6a5938a56886
 
 -- diagnostic sources
 -- local diagnostics = null_ls.builtins.diagnostics
@@ -23,7 +20,6 @@ local formatting = null_ls.builtins.formatting
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local callback = function()
-<<<<<<< HEAD
         vim.lsp.buf.format({
             bufnr = bufnr,
             filter = function(client)
@@ -55,7 +51,6 @@ local callback = function()
     })
 
 vim.cmd('map <Leader>f :lua vim.lsp.buf.format(nil, 10000)<CR>')
-=======
     vim.lsp.buf.format({
         bufnr = bufnr,
         filter = function(client)
@@ -65,26 +60,3 @@ vim.cmd('map <Leader>f :lua vim.lsp.buf.format(nil, 10000)<CR>')
 end,
 
 vim.cmd('map <Leader>f :lua vim.lsp.buf.format(nil, 10000)<CR>')
-
-null_ls.setup({
-    sources = {
-        null_ls.builtins.diagnostics.eslint,
-        null_ls.builtins.code_actions.gitsigns,
-        null_ls.builtins.code_actions.xo,
-        null_ls.builtins.formatting.prettier
-    },
-     on_attach = function(client, bufnr)
-        if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                group = augroup,
-                buffer = bufnr,
-                callback = function()
-                    -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                    vim.lsp.buf.format({ bufnr = bufnr }) 
-                end,
-            })
-        end
-    end,
-})
->>>>>>> ea1b70a4420ae9bfe37902e47dfa6a5938a56886
