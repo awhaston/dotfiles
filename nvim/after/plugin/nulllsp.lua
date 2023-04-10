@@ -2,21 +2,10 @@ local null_ls = require("null-ls")
 
 -- code action sources
 local code_actions = null_ls.builtins.code_actions
--- local code_actions = null_ls.builtins.code_actions
 
 -- diagnostic sources
--- local diagnostics = null_ls.builtins.diagnostics
-
--- formatting sources
+-- local diagnostics = null_ls.builtins.diagnosticslocal
 local formatting = null_ls.builtins.formatting
-
--- hover sources
--- local hover = null_ls.builtins.hover
-
--- completion sources
-
--- local completion = null_ls.builtins.completion
-
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local callback = function()
@@ -49,14 +38,5 @@ local callback = function()
             end
         end,
     })
-
-vim.cmd('map <Leader>f :lua vim.lsp.buf.format(nil, 10000)<CR>')
-    vim.lsp.buf.format({
-        bufnr = bufnr,
-        filter = function(client)
-            return client.name == "null-ls"
-        end
-    })
-end,
 
 vim.cmd('map <Leader>f :lua vim.lsp.buf.format(nil, 10000)<CR>')
