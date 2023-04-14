@@ -1,6 +1,8 @@
 export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 
+
+
 #Aliases
 alias -g v="nvim"
 alias -g g="git"
@@ -14,5 +16,6 @@ alias -g ga="git add"
 alias projects="cd ~/Projects"
 alias dotfiles="cd ~/.dotfiles"
 alias ll="ls -l"
+alias -g lg="lazygit"
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
