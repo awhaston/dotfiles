@@ -30,7 +30,7 @@ brew tap homebrew/cask-fonts
 brew install --cask font-roboto-mono-nerd-font
 
 # Install zsh-autocomplete
-brew install zsh-autosuggestions
+# brew install zsh-autosuggestions
 
 # Install Util Apps
 brew install --cask linearmouse
