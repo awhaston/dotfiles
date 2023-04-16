@@ -17,5 +17,3 @@ alias projects="cd ~/Projects"
 alias dotfiles="cd ~/.dotfiles"
 alias ll="ls -l"
 alias -g lg="lazygit"
-
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
