@@ -27,5 +27,7 @@ if oper != 'Windows'
 
 system('git config --global core.excludesfile ~/.dotfiles/.gitignore')
 
+system('git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim')
+
 for item in npm:
     system('npm install -g ' + item)
