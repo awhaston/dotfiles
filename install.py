@@ -26,3 +26,6 @@ if oper != 'Windows'
    system('ln -s ~/.dotfiles/nvim ~/.config/nvim/config/')
 
 system('git config --global core.excludesfile ~/.dotfiles/.gitignore')
+
+for item in npm:
+    system('npm install -g ' + item)
