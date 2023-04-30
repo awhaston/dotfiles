@@ -6,6 +6,15 @@ oper = platform.system()
 
 npm = ['typescript', 'nodemon', 'neovim', 'prettier']
 
+
+def link():
+   system('ln -s ~/.dotfiles/.zshrc ~')
+   system('ln -s ~/.dotfiles/.gitconfig ~')
+   system('ln -s ~/.dotfiles/nvim ~/.config/nvim/config/')
+
+def sourceZSH():
+    system('source ~/.dotfiles/.zshrc')
+
 if oper == 'Darwin':
     system('/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"')
     link()
@@ -33,11 +42,3 @@ system('git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/s
 
 for item in npm:
     system('npm install -g ' + item)
-
-def link():
-   system('ln -s ~/.dotfiles/.zshrc ~')
-   system('ln -s ~/.dotfiles/.gitconfig ~')
-   system('ln -s ~/.dotfiles/nvim ~/.config/nvim/config/')
-
-def sourceZSH():
-    system('source ~/.dotfiles/.zshrc')
