@@ -12,7 +12,7 @@ def link():
     system('rm -rf ~/.gitconfig')
     system('ln -s ~/.dotfiles/.zshrc ~')
     system('ln -s ~/.dotfiles/.gitconfig ~')
-    system('mkdir ~/.config ~/.config/nvim ~/.config/nvim/config/')
+    system('mkdir ~/.config')
     system('ln -s ~/.dotfiles/nvim ~/.config/nvim/config/')
 
 def sourceZSH():
