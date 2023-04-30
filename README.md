@@ -6,7 +6,7 @@ For now the install scripts are meant for macOS zsh homebrew enviroment
 
 ### Install Guide
 
-Clone into home directory ~/.dotfiles  
+`git clone https://github.com/awhaston/.dotfiles.git ~/.dotfiles`  
 If using homebrew run homebrew.sh (this will run install.sh)  
 else use install.sh  
 Install.sh set all symbolic links and install required npm packages
