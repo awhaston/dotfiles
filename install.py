@@ -10,10 +10,11 @@ npm = ['typescript', 'nodemon', 'neovim', 'prettier']
 def link():
    system('ln -s ~/.dotfiles/.zshrc ~')
    system('ln -s ~/.dotfiles/.gitconfig ~')
+   system('mkdir ~/.config/nvim/config/')
    system('ln -s ~/.dotfiles/nvim ~/.config/nvim/config/')
 
 def sourceZSH():
-    system('source ~/.dotfiles/.zshrc')
+    system('source ~/.zshrc')
 
 if oper == 'Darwin':
     system('/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"')
