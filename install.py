@@ -15,15 +15,13 @@ def link():
     system('mkdir ~/.config')
     system('ln -s ~/.dotfiles/nvim ~/.config/')
 
-def source():
-    system('source ~/.zshrc')
-
 if oper == 'Darwin':
     system('/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"')
     link()
-    source()
     macosPrograms = ['iterm2', 'neovim', 'node@18', 'ripgrep', 'lazygit'] 
     caskPrograms = ['font-roboto-mono-nerd-font', 'linearmouse', 'tunnelblick']
+
+    system('source ~/.zshrc')
 
     for program in macosPrograms:
          system('brew install ' + program)
