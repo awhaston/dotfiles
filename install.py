@@ -20,7 +20,7 @@ if oper == 'Darwin':
     for program in caskPrograms:
         system('brew install ' + program) 
 
-if oper != 'Windows'
+if oper != 'Windows':
    system('ln -s ~/.dotfiles/.zshrc ~')
    system('ln -s ~/.dotfiles/.gitconfig ~')
    system('ln -s ~/.dotfiles/nvim ~/.config/nvim/config/')
