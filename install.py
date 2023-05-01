@@ -1,5 +1,6 @@
 import os
 import platform
+import subprocess
 
 system = os.system
 oper = platform.system()
@@ -21,7 +22,9 @@ if oper == 'Darwin':
     macosPrograms = ['iterm2', 'neovim', 'node@18', 'ripgrep', 'lazygit'] 
     caskPrograms = ['font-roboto-mono-nerd-font', 'linearmouse', 'tunnelblick']
 
-    system('source ~/.zshrc')
+    #system('source ~/.zshrc')
+    proc = subprocess.Popen('source ~/.zshrc', shell=True, stdin=None, stdout=open(os.devnull,"wb"), executable="/bin/zsh")
+    proc.wait()
 
     for program in macosPrograms:
          system('brew install ' + program)
