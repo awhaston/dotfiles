@@ -10,8 +10,8 @@ lsp.ensure_installed({
     'tsserver',
     'emmet_ls',
     'html',
-    'css-lsp',
-    'cssmodule-language-server',
+    'csslsp',
+    'cssmodule_ls',
     'prettier'
 })
 
