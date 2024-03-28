@@ -3,6 +3,7 @@ return {
 
     keys = {
         {
+            "<leader>t",
             "<cmd>ToggleTerm<cr>",
             desc = "Open floating terminal",
         },
