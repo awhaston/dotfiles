@@ -32,9 +32,5 @@ brew install --cask font-roboto-mono-nerd-font
 # Install zsh-autocomplete
 # brew install zsh-autosuggestions
 
-# Install Util Apps
-brew install --cask linearmouse
-brew install --cask tunnelblick
-
 # Calling next script
-~/install.sh
+~/install-mac.sh
