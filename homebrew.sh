@@ -31,6 +31,3 @@ brew install --cask font-roboto-mono-nerd-font
 
 # Install zsh-autocomplete
 # brew install zsh-autosuggestions
-
-# Calling next script
-~/install-mac.sh
