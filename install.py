@@ -27,7 +27,7 @@ if oper == 'Darwin':
     proc.wait()
 
     for program in macosPrograms:
-         system('brew install ' + program)
+        system('brew install ' + program)
 
     system('brew tap homebrew/cask')
     system('brew tap homebrew/cask-fonts')
