@@ -1,8 +1,8 @@
 # .dotfiles
 
-This is my dotfiles for my terminal dev enviroment
+This is my dotfiles for my terminal dev environment
 
-For now the install scripts are meant for macOS zsh homebrew enviroment
+For now the install scripts are meant for macOS zsh homebrew environment
 
 ### Install Guide
 
