@@ -4,7 +4,7 @@
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Make Project folder
-mkdir ~/git
+mkdir ~/projects
 
 # Install global npm packages
 npm install -g typescript
