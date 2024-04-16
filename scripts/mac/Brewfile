@@ -1,0 +1,9 @@
+tap "homebrew/cask-fonts"
+
+brew "neovim"
+brew "node@20"
+brew "ripgrep"
+brew "stow"
+
+cask "iterm2"
+cask "font-roboto-mono-nerd-font"

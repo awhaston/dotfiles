@@ -2,6 +2,6 @@
 	name = Wyatt Haston
     email = 98433717+awhaston@users.noreply.github.com
 [core]
-	excludesfile = /Users/wyatthaston/.dotfiles/.gitignore
+	excludesfile = /Users/wyatthaston/dotfiles/.gitignore
 [push]
 	autoSetupRemote = true
