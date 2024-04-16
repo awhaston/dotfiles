@@ -4,7 +4,7 @@
 ./scripts/configure-dev.sh
 
 # Sourcing to refresh paths
-source ~/dotfiles/.zshrc
+source ~/dotfiles/dot-zshrc
 
 mv ~/.gitconfig ~/.gitconfig.bak
 
