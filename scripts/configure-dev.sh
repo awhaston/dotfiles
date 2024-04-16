@@ -11,9 +11,7 @@ mkdir ~/projects
 
 # Install global npm packages
 npm install -g typescript
-npm install -g nodemon
 npm install -g neovim
-npm install -g pretttier
 
 # Add .gitignore to globalscope
 git config --global core.excludesfile ~/dotfiles/.gitignore
