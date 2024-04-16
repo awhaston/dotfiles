@@ -8,4 +8,4 @@
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew bundle
+brew bundle --file=~/dotfiles/scripts/mac/Brewfile
