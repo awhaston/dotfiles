@@ -4,6 +4,7 @@ brew "neovim"
 brew "node@20"
 brew "ripgrep"
 brew "stow"
+brew "tmux"
 
 cask "iterm2"
 cask "font-roboto-mono-nerd-font"

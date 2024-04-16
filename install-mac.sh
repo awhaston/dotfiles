@@ -6,7 +6,6 @@
 # Sourcing to refresh paths
 source ~/dotfiles/.zshrc
 
-mv ~/.zshrc ~/.zshrc.bak
 mv ~/.gitconfig ~/.gitconfig.bak
 
 # Link dotfiles
