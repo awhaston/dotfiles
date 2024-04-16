@@ -17,7 +17,10 @@ xcode-select --install
 
 ### Install Guide
 
-`git clone https://github.com/awhaston/dotfiles.git ~/dotfiles`  
+```
+git clone https://github.com/awhaston/dotfiles.git ~/dotfiles
+```
+
 Run .sh file that matches OS
 
 ### Apps Installed via homebrew
