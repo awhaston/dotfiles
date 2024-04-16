@@ -3,6 +3,9 @@
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# Make Project folder
+mkdir ~/git
+
 # Install global npm packages
 npm install -g typescript
 npm install -g nodemon
