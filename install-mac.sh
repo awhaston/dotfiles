@@ -4,6 +4,7 @@
 ./scripts/configure-dev.sh
 
 cp ~/.zshrc ~/.zshrc.bak
+cp ~/.gitconfig ~/.gitconfig.bak
 
 # Link dotfiles
 stow .
