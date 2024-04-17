@@ -9,4 +9,4 @@ source ~/dotfiles/dot-zshrc
 mv ~/.gitconfig ~/.gitconfig.bak
 
 # Link dotfiles
-stow .
+stow . --dotfiles
