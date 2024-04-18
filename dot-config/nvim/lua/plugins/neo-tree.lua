@@ -16,20 +16,18 @@ return {
 					filtered_items = {
 						visible = false, -- when true, they will just be displayed differently than normal items
 						hide_dotfiles = true,
-
+						hide_gitignored = false,
 						never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
 							".DS_Store",
 							"thumbs.db",
 						},
 					},
 				},
+				-- Close Neo-Tree of file open
 				event_handlers = {
 					{
 						event = "file_opened",
 						handler = function(file_path)
-							-- auto close
-							-- vimc.cmd("Neotree close")
-							-- OR
 							require("neo-tree.command").execute({ action = "close" })
 						end,
 					},
