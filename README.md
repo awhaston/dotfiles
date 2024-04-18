@@ -4,7 +4,7 @@ This is my dotfiles for my terminal dev environment
 
 For now the install scripts are meant for macOS zsh homebrew environment
 
-## Prereqs
+### Mac Install Guide
 
 - XCode cmd tools (If on Mac)
 
@@ -12,16 +12,18 @@ For now the install scripts are meant for macOS zsh homebrew environment
 xcode-select --install
 ```
 
-- Git
-- Stow
-
-### Install Guide
+- Clone Repo
 
 ```
 git clone https://github.com/awhaston/dotfiles.git ~/dotfiles
 ```
 
-Run .sh file that matches OS
+- cd into new directory and run install-mac.sh
+
+```
+cd ~/dotfiles
+sh install-mac.sh
+```
 
 ### Apps Installed via homebrew
 
@@ -40,3 +42,4 @@ Run .sh file that matches OS
 ### TODO
 
 - Add support for dnf
+- Linux support
