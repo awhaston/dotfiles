@@ -32,6 +32,8 @@ return {
 							-- C
 							"cmake",
 							"clangd",
+							-- Go
+							"gopls",
 						},
 					})
 				end,
@@ -70,6 +72,10 @@ return {
 			})
 
 			lspconfig.cmake.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
 
