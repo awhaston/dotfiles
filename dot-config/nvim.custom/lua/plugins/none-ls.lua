@@ -27,8 +27,8 @@ return {
 		null_ls.setup({
 			sources = {
 				require("none-ls.diagnostics.eslint_d"),
-				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.clang_format,
 				-- Go
 				null_ls.builtins.code_actions.gomodifytags,
