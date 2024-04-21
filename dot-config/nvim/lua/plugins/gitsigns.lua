@@ -18,6 +18,9 @@ return {
             vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
         end
 
+        -- Make side columns bigger if using gitsigns
+        vim.opt.signcolumn = "yes:2"
+
         -- stylua: ignore start
         map("n", "]h", gs.next_hunk, "Next Hunk")
         map("n", "[h", gs.prev_hunk, "Prev Hunk")
