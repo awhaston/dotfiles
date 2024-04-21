@@ -1,32 +1,100 @@
 return {
-    {
-        "neovim/nvim-lspconfig",
-        opts = {
-            servers = {
-                -- Ensure mason installs the server
-                omnisharp = {},
-            },
-            -- configure omnisharp to fix the semantic tokens bug (really annoying)
-            setup = {
-                omnisharp = function(_, _)
-                    require("lazyvim.util").lsp.on_attach(function(client, _)
-                        if client.name == "omnisharp" then
-                            ---@type string[]
-                            local tokenModifiers =
-                                client.server_capabilities.semanticTokensProvider.legend.tokenModifiers
-                            for i, v in ipairs(tokenModifiers) do
-                                tokenModifiers[i] = v:gsub(" ", "_")
-                            end
-                            ---@type string[]
-                            local tokenTypes = client.server_capabilities.semanticTokensProvider.legend.tokenTypes
-                            for i, v in ipairs(tokenTypes) do
-                                tokenTypes[i] = v:gsub(" ", "_")
-                            end
-                        end
-                    end)
-                    return false
-                end,
-            },
-        },
-    },
+	{
+		"neovim/nvim-lspconfig",
+		dependencies = {
+			{
+				"williamboman/mason.nvim",
+				lazy = false,
+				config = function()
+					require("mason").setup()
+
+					vim.keymap.set("n", "<leader>M", ":Mason <CR>", { desc = "Mason" })
+				end,
+			},
+			{
+				"hrsh7th/cmp-nvim-lsp",
+			},
+			{
+				"williamboman/mason-lspconfig.nvim",
+				lazy = false,
+				config = function()
+					require("mason-lspconfig").setup({
+						-- Formatters are in none-lsp.lua
+						ensure_installed = {
+							-- Lua
+							"lua_ls",
+							-- Javascript/Typescript
+							"tsserver",
+							"html",
+							"tailwindcss",
+							"eslint",
+							-- Python
+							"pyright",
+							-- C
+							"cmake",
+							"clangd",
+							-- Go
+							"gopls",
+						},
+					})
+				end,
+			},
+		},
+		lazy = false,
+		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			-- Configuring all the servers
+			local lspconfig = require("lspconfig")
+			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.eslint.setup({
+				capabilities = capabilities,
+				on_attach = function(client, bufnr)
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						buffer = bufnr,
+						command = "EslintFixAll",
+					})
+				end,
+				workingDirectories = { mode = "auto" },
+			})
+
+			lspconfig.solargraph.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.html.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.clangd.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.tailwindcss.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.pyright.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.cmake.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+			})
+
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
+			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
+			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Goto References" })
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
+		end,
+	},
 }
