@@ -51,6 +51,10 @@ return {
                 capabilities = capabilities,
             })
 
+            lspconfig.cssls.setup({
+                capabilities = capabilities,
+            })
+
             lspconfig.eslint.setup({
                 capabilities = capabilities,
                 on_attach = function(client, bufnr)
