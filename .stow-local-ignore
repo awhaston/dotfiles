@@ -1,6 +1,7 @@
 install-mac.sh
 .DS_Store
 scripts
+misc
 
 # Comments and blank lines are allowed
 
