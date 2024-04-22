@@ -30,6 +30,7 @@ return {
                 { desc = "Find Diagnostics Current Buffer" }
             )
             vim.keymap.set("n", "<leader>fD", builtin.diagnostics, { desc = "Find Diagnostics Project" })
+            vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
         end,
     },
 }
