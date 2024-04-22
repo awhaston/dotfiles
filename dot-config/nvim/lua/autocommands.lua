@@ -2,16 +2,11 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
 -- Hightlight text on yank
-local yank_group = augroup("HighlightYank", {})
-
 autocmd("TextYankPost", {
-    group = yank_group,
+    group = augroup("HighlightYank", {}),
     pattern = "*",
     callback = function()
-        vim.highlight.on_yank({
-            higroup = "IncSearch",
-            timeout = 100,
-        })
+        vim.highlight.on_yank({ higroup = "IncSearch", timeout = 100 })
     end,
 })
 
@@ -68,4 +63,17 @@ autocmd({ "VimResized" }, {
         vim.cmd("tabdo wincmd =")
         vim.cmd("tabnext " .. current_tab)
     end,
+})
+
+-- Reload config on save
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = "**/*config/nvim/lua/*.lua",
+    callback = function()
+        local filepath = vim.fn.expand("%")
+
+        dofile(filepath)
+        vim.notify("Configuration reloaded \n" .. filepath, nil)
+    end,
+    group = augroup("reload_config", {}),
+    desc = "Reload config on save",
 })
