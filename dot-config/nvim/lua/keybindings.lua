@@ -22,9 +22,4 @@ vim.keymap.set("n", "dd", function()
     end
 end, { expr = true, desc = "Smart Yank: Does not yank empty lines" })
 
-vim.keymap.set(
-    "n",
-    "<leader>gg",
-    "<cmd>!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit <CR><CR>",
-    { desc = "Git Go" }
-) -- opens lazygit in a new tmux window
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank into System Clipboard" })
