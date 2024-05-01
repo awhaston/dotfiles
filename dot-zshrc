@@ -17,3 +17,6 @@ alias projects="cd ~/projects"
 alias dotfiles="cd ~/dotfiles"
 alias ll="ls -l"
 alias -g lg="lazygit"
+
+alias sa='source ~/.zshrc;echo "ZSH aliases sourced."'
+
