@@ -99,9 +99,7 @@ return {
                 capabilities = capabilities,
             })
 
-            lspconfig.gopls.setup({
-                capabilities = capabilities,
-            })
+            lspconfig.gopls.setup({})
 
             -- LSP Keybindings
             vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
