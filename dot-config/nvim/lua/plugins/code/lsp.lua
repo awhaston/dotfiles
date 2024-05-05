@@ -104,6 +104,7 @@ return {
             -- LSP Keybindings
             vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
+            vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "Goto Implementations" })
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Goto References" })
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
             vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostic" })

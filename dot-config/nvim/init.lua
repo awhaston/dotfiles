@@ -14,6 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 require("keybindings")
 require("autocommands")
 require("options")
-require("lazy").setup("plugins")
+require("lazy").setup({
+    { import = "plugins.ui" },
+    { import = "plugins.code" },
+    { import = "plugins.code.langs" },
+})
 
 vim.keymap.set("n", "<leader>L", ":Lazy <CR>", { desc = "Show Lazy" })
