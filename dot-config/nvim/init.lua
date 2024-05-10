@@ -20,4 +20,6 @@ require("lazy").setup({
     { import = "plugins.code.langs" },
 })
 
+vim.cmd([[colorscheme rasmus]])
+
 vim.keymap.set("n", "<leader>L", ":Lazy <CR>", { desc = "Show Lazy" })
