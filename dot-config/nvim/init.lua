@@ -18,6 +18,7 @@ require("lazy").setup({
     { import = "plugins.ui" },
     { import = "plugins.code" },
     { import = "plugins.code.langs" },
+    lazy = true,
 })
 
 vim.cmd([[colorscheme rasmus]])
