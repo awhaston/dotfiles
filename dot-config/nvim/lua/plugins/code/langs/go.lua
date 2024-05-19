@@ -19,12 +19,14 @@ return {
             })
         end,
     },
+    -- TODO Get Dap working
     {
         "leoluz/nvim-dap-go",
         ft = "go",
         dependencies = {
             "mfussenegger/nvim-dap",
         },
+        enabled = false,
         config = function()
             require("dap-go").setup()
         end,
