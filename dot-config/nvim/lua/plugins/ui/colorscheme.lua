@@ -8,6 +8,6 @@ return {
     {
         "kvrohit/rasmus.nvim",
         name = "rasmus",
-        lazy = true,
+        priority = 1000,
     },
 }
