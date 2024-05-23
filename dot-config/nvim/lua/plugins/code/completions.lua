@@ -3,6 +3,7 @@ return {
     config = function()
         local cmp = require("cmp")
 
+        require("snippets").register_cmp_source()
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -23,6 +24,7 @@ return {
 
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
+                { name = "snp" },
             }, {
                 { name = "buffer" },
             }),
