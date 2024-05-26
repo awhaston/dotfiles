@@ -1,8 +1,11 @@
-opt = vim.opt
+local opt = vim.opt
 
 -- Line numbers
 opt.nu = true
 opt.relativenumber = true
+
+-- Search
+opt.inccommand = "split"
 
 -- Tabs
 opt.tabstop = 4

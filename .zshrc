@@ -16,7 +16,7 @@ alias -g gwta="git worktree add"
 alias -g ga="git add"
 alias projects="cd ~/git"
 alias dotfiles="cd ~/dotfiles"
-alias ll="ls -l"
+alias ll="ls -al"
 alias -g lg="lazygit"
 
 alias sa='source ~/.zshrc;echo "ZSH aliases sourced."'
