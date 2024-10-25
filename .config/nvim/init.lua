@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("keybindings")
 require("autocommands")
 require("options")
+require("commands")
 require("lazy").setup({
     { import = "plugins.ui" },
     { import = "plugins.code" },
