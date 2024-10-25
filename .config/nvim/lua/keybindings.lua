@@ -1,6 +1,6 @@
-local map = vim.keymap.set
-
 vim.g.mapleader = " "
+
+local map = vim.keymap.set
 
 -- Window navigation
 map("n", "<C-j>", "<C-W>j")
@@ -23,3 +23,19 @@ vim.keymap.set("n", "dd", function()
 end, { expr = true, desc = "Smart Yank: Does not yank empty lines" })
 
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank into System Clipboard" })
+
+function split_term()
+    vim.cmd("belowright split")
+    vim.cmd("terminal")
+end
+
+-- Open horizontal terminal
+vim.keymap.set("n", "<leader>wt", ":lua split_term()<CR>", { desc = "Open Horizonal Terminal" })
+vim.keymap.set("t", "<C-N>", "<C-\\><C-N>", { desc = "Escape to normal mode" })
+
+-- Window keybindings
+vim.keymap.set("n", "<leader>wf", "<C-w>_<C-w>|<CR>", { desc = "Fullscreen windows" })
+vim.keymap.set("n", "<leader>wF", "<C-w>=<CR>", { desc = "Equalize windows" })
+vim.keymap.set("n", "<leader>wh", "<C-w>s<CR>", { desc = "Horizonal split" })
+vim.keymap.set("n", "<leader>wv", "<C-w>v<CR>", { desc = "Vertical split" })
+vim.keymap.set("n", "<leader>wx", "<C-w>v<CR>", { desc = "Kill window" })
