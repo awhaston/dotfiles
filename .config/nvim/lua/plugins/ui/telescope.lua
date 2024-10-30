@@ -31,6 +31,26 @@ return {
             )
             vim.keymap.set("n", "<leader>fD", builtin.diagnostics, { desc = "Find Diagnostics Project" })
             vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
+
+            function FindFiles(opts)
+                dir = opts.args
+
+                builtin.find_files({ search_dirs = { dir } })
+            end
+
+            function FindGrep(opts)
+                dir = opts.args
+
+                builtin.live_grep({ search_dirs = { dir } })
+            end
+
+            vim.api.nvim_create_user_command("FindFiles", function(opts)
+                FindFiles(opts)
+            end, { nargs = 1, desc = "Find files in a directory" })
+
+            vim.api.nvim_create_user_command("FindGrep", function(opts)
+                FindGrep(opts)
+            end, { nargs = 1, desc = "Grep in a directory" })
         end,
     },
 }
