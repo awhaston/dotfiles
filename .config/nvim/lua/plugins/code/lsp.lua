@@ -24,7 +24,7 @@ return {
                             -- Lua
                             "lua_ls",
                             -- Javascript/Typescript
-                            "tsserver",
+                            "ts_ls",
                             "html",
                             "tailwindcss",
                             "eslint",
