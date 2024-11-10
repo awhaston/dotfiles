@@ -4,8 +4,9 @@ export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 export PATH=$PATH:/Users/wyatthaston/.dotnet/tools
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
-export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
+export DOTNET_ROOT="$PATH:/opt/homebrew/opt/dotnet/libexec"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/bin"
 
 # Aliases
 alias -g v="nvim"
