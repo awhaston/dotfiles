@@ -8,6 +8,9 @@ export DOTNET_ROOT="$PATH:/opt/homebrew/opt/dotnet/libexec"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/bin"
 
+# Prompt
+PS1="%n@%m %~ %# "
+
 # Aliases
 alias -g v="nvim"
 alias -g g="git"
@@ -22,3 +25,6 @@ alias -g lg="lazygit"
 
 alias sa='source ~/.zshrc;echo "ZSH aliases sourced."'
 
+##########################################################
+
+fastfetch
