@@ -10,6 +10,7 @@ return {
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             -- Configuring all the servers
+            -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
             local lspconfig = require("lspconfig")
             lspconfig.ts_ls.setup({
                 capabilities = capabilities,
