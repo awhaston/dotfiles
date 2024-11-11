@@ -3,8 +3,7 @@ return {
         "neovim/nvim-lspconfig",
         dependencies = {
             {
-                "hrsh7th/cmp-nvim-lsp",
-            },
+                "hrsh7th/cmp-nvim-lsp", },
         },
         lazy = false,
         config = function()
@@ -16,7 +15,7 @@ return {
                 capabilities = capabilities,
             })
 
-            lspconfig.phpactor.setup{}
+            lspconfig.phpactor.setup {}
 
 
             lspconfig.cssls.setup({
@@ -34,9 +33,10 @@ return {
             --     workingDirectories = { mode = "auto" },
             -- })
 
-            lspconfig.solargraph.setup({
-                capabilities = capabilities,
-            })
+            -- Ruby Lsp
+            -- lspconfig.solargraph.setup({
+            --     capabilities = capabilities,
+            -- })
 
             lspconfig.html.setup({
                 capabilities = capabilities,
