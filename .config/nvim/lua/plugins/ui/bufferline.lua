@@ -11,18 +11,11 @@ return {
                     -- stylua: ignore
                     diagnostics = "nvim_lsp",
                     always_show_bufferline = false,
-                    offsets = {
-                        {
-                            filetype = "neo-tree",
-                            text = "Neo-tree",
-                            highlight = "Directory",
-                            text_align = "left",
-                        },
-                    },
                 },
             })
 
             map("n", "<leader>bd", ":bd<CR>", { desc = "Close Buffer" })
+            map("n", "<leader>bdd", ":bd!<CR>", { desc = "Force Close Buffer" })
             map("n", "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", { desc = "Toggle Pin" })
             map("n", "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", { desc = "Delete Non-Pinned Buffers" })
             map("n", "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>", { desc = "Delete Other Buffers" })
