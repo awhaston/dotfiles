@@ -24,15 +24,6 @@ end, { expr = true, desc = "Smart Yank: Does not yank empty lines" })
 
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank into System Clipboard" })
 
-function split_term()
-    vim.cmd("belowright split")
-    vim.cmd("terminal")
-end
-
--- Open horizontal terminal
-vim.keymap.set("n", "<leader>wt", ":lua split_term()<CR>", { desc = "Open Horizonal Terminal" })
-vim.keymap.set("t", "<C-N>", "<C-\\><C-N>", { desc = "Escape to normal mode" })
-
 -- Window keybindings
 vim.keymap.set("n", "<leader>wf", "<C-w>_<C-w>|<CR>", { desc = "Fullscreen windows" })
 vim.keymap.set("n", "<leader>wF", "<C-w>=<CR>", { desc = "Equalize windows" })
