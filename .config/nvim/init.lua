@@ -15,6 +15,7 @@ require("keybindings")
 require("autocommands")
 require("options")
 require("commands")
+require("terminal")
 require("lazy").setup({
     { import = "plugins.ui" },
     { import = "plugins.code" },
