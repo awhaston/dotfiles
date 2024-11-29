@@ -27,8 +27,9 @@ vim.api.nvim_create_user_command("Prettier", function(args)
         prettier_config = vim.fs.joinpath(vim.fn.stdpath("config"), "prettier.json")
     end
 
-    exit_message = vim.fn.system(string.format("prettier --config %s %s --write", prettier_config,
-        current_file))
+    cmd = string.format("prettier --config \"%s\" \"%s\" --write", prettier_config, current_file)
+
+    exit_message = vim.fn.system(cmd)
 
     if vim.v.shell_error ~= 0 then
         print("There was an error running prettier", exit_message)
