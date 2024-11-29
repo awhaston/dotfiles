@@ -5,5 +5,5 @@ function split_term()
 end
 
 -- Terminal keybindings
-vim.keymap.set("n", "<leader>wt", ":lua split_term()<CR>", { desc = "Open Horizonal Terminal" })
+vim.keymap.set("n", "<leader>wt", split_term, { desc = "Open Horizonal Terminal" })
 vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-N>", { desc = "Escape to normal mode" })
