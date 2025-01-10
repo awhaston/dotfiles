@@ -1,0 +1,34 @@
+
+mouse-hide-while-typing = true
+
+#
+# Theme settings
+#
+
+theme = Broadcast
+
+#
+# Window settings
+#
+window-padding-x = 5
+window-padding-y = 5
+window-padding-color = extend
+
+#
+# Keybindings
+#
+keybind = ctrl+z=close_surface
+keybind = ctrl+d=new_split:right
+
+#
+# Font settings
+#
+font-family = Cousine Nerd Font Mono
+font-size = 18
+
+#
+# Cursor Settings
+#
+cursor-style = block
+#cursor-style-blink = false
+shell-integration-features = no-cursor
