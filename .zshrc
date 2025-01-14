@@ -22,6 +22,8 @@ alias projects="cd ~/git"
 alias dotfiles="cd ~/dotfiles"
 alias ll="ls -al"
 alias -g lg="lazygit"
+alias -g cls="clear && ls"
+alias -g cll="clear && ll"
 
 alias sa='source ~/.zshrc;echo "ZSH aliases sourced."'
 
