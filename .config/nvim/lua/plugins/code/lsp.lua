@@ -65,10 +65,6 @@ return {
                 capabilities = capabilities,
             })
 
-            lspconfig.cmake.setup({
-                capabilities = capabilities,
-            })
-
             lspconfig.gopls.setup({})
 
             -- LSP Keybindings
