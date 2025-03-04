@@ -1,9 +1,3 @@
-function ProseMode(args)
-    vim.cmd(":set wrap!")
-end
-
-vim.api.nvim_create_user_command("Prose", ProseMode, { desc = "Enable prose mode" })
-
 custom_prettier_config = nil
 
 vim.api.nvim_create_user_command("SetPrettierConfig", function(args)
