@@ -24,6 +24,10 @@ end, { expr = true, desc = "Smart Yank: Does not yank empty lines" })
 
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank into System Clipboard" })
 
+-- Buffer keybindings
+map("n", "<leader>bd", ":bd<CR>", { desc = "Close Buffer" })
+map("n", "<leader>bD", ":bd!<CR>", { desc = "Force Close Buffer" })
+
 -- Window keybindings
 vim.keymap.set("n", "<leader>wf", "<C-w>_<C-w>|<CR>", { desc = "Fullscreen windows" })
 vim.keymap.set("n", "<leader>wF", "<C-w>=<CR>", { desc = "Equalize windows" })

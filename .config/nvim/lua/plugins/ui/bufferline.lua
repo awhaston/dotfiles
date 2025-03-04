@@ -4,18 +4,16 @@ return {
         branch = "main",
         dependencies = "nvim-tree/nvim-web-devicons",
         event = "VeryLazy",
+        enabled = false,
         config = function()
             map = vim.keymap.set
             require("bufferline").setup({
-                options = {
-                    -- stylua: ignore
+                options = { -- stylua: ignore
                     diagnostics = "nvim_lsp",
                     always_show_bufferline = false,
                 },
             })
 
-            map("n", "<leader>bd", ":bd<CR>", { desc = "Close Buffer" })
-            map("n", "<leader>bD", ":bd!<CR>", { desc = "Force Close Buffer" })
             map("n", "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", { desc = "Toggle Pin" })
             map("n", "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", { desc = "Delete Non-Pinned Buffers" })
             map("n", "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>", { desc = "Delete Other Buffers" })

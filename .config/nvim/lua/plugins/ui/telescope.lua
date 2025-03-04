@@ -18,7 +18,10 @@ return {
             })
 
             vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
-            vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Find Files" })
+            vim.keymap.set("n", "<leader><leader>", function(args)
+                builtin.buffers()
+                vim.api.nvim_input("<esc>")
+            end, { desc = "Find Buffers" })
             vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find Grep" })
             vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find References" })
             vim.keymap.set("n", "<leader>fi", builtin.lsp_implementations, { desc = "Find Implementations" })
