@@ -1,6 +1,6 @@
 return {
     {
-        "kvrohit/rasmus.nvim",
+        "awhaston/rasmus.nvim",
         name = "rasmus",
         lazy = false,
         priority = 1000,

@@ -1,5 +1,5 @@
 return {
-    "lewis6991/gitsigns.nvim",
+    "awhaston/gitsigns.nvim",
 
     config = function()
         require("gitsigns").setup({

@@ -1,5 +1,5 @@
 return {
-    "github/copilot.vim",
+    "awhaston/copilot.vim",
 
     config = function() end,
 }

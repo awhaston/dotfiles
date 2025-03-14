@@ -1,6 +1,6 @@
 return {
     {
-        "nvim-treesitter/nvim-treesitter",
+        "awhaston/nvim-treesitter",
         build = ":TSUpdate",
         lazy = false,
         config = function()
@@ -27,6 +27,8 @@ return {
                     "gosum",
                     "gotmpl",
                     "gowork",
+                    "css",
+                    -- "svelte"
                 },
                 highlight = { enabled = true },
                 indent = { enabled = true },

@@ -1,10 +1,10 @@
 return {
     {
 
-        "olexsmir/gopher.nvim",
+        "awhaston/gopher.nvim",
         requires = { -- dependencies
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
+            "awhaston/plenary.nvim",
+            "awhaston/nvim-treesitter",
         },
         ft = "go",
         config = function()
@@ -17,18 +17,6 @@ return {
                     iferr = "iferr",
                 },
             })
-        end,
-    },
-    -- TODO Get Dap working
-    {
-        "leoluz/nvim-dap-go",
-        ft = "go",
-        dependencies = {
-            "mfussenegger/nvim-dap",
-        },
-        enabled = false,
-        config = function()
-            require("dap-go").setup()
         end,
     },
 }

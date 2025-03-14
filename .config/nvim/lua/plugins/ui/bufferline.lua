@@ -1,8 +1,8 @@
 return {
     {
-        "akinsho/bufferline.nvim",
+        "awhaston/bufferline.nvim",
         branch = "main",
-        dependencies = "nvim-tree/nvim-web-devicons",
+        dependencies = "awhaston/nvim-web-devicons",
         event = "VeryLazy",
         enabled = false,
         config = function()

@@ -1,6 +1,6 @@
 return {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    'awhaston/lualine.nvim',
+    dependencies = { 'awhaston/nvim-web-devicons' },
     config = function()
         options = {
             theme = 'onedark'

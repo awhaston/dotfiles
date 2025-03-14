@@ -1,9 +1,9 @@
 return {
     {
-        "neovim/nvim-lspconfig",
+        "awhaston/nvim-lspconfig",
         dependencies = {
             {
-                "hrsh7th/cmp-nvim-lsp", },
+                "awhaston/cmp-nvim-lsp", },
         },
         lazy = false,
         config = function()
@@ -17,6 +17,7 @@ return {
             })
 
             lspconfig.phpactor.setup {}
+            lspconfig.svelte.setup {}
 
 
             lspconfig.cssls.setup({
