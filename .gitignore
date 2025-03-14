@@ -2,3 +2,28 @@
 package.lock
 .vscode
 **/tmux-*.log
+*#*
+
+# Emacs lock files
+*~
+.#*
+
+# Auto-save files
+*#*
+
+# Backup files
+*~
+
+# Emacs version control directories
+.vc/
+
+# Package-related directories (e.g., elpa or straight)
+elpa/
+straight/
+
+# Custom Emacs config backup files
+*.bak
+
+# Emacs custom settings files
+custom.el
+
