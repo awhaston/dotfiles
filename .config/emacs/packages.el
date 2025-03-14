@@ -3,12 +3,21 @@
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
-(package-refresh-contents)
+;;(package-refresh-contents)
 
 ;; Download Evil
 (unless (package-installed-p 'evil)
   (package-install 'evil))
 
-;; Enable Evil
-(require 'evil)
-;;(evil-mode 1)
+;; Download lsp-mode
+(unless (package-installed-p 'lsp-mode)
+  (package-install 'lsp-mode))
+
+;; Download company
+(unless (package-installed-p 'company)
+  (package-install 'company))
+
+;; Download Evil
+(unless (package-installed-p 'doom-themes)
+  (package-install 'doom-themes))
+
