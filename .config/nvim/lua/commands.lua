@@ -32,3 +32,53 @@ vim.api.nvim_create_user_command("Prettier", function(args)
         vim.cmd("edit!")
     end
 end, { nargs = "*", desc = "Run Prettier on the current file" })
+
+local oct2bin = {
+    ['0'] = '000',
+    ['1'] = '001',
+    ['2'] = '010',
+    ['3'] = '011',
+    ['4'] = '100',
+    ['5'] = '101',
+    ['6'] = '110',
+    ['7'] = '111'
+}
+local function getOct2bin(a) return oct2bin[a] end
+local function convertBin(n)
+    local s = string.format('%o', n)
+    s = s:gsub('.', getOct2bin)
+    return s
+end
+
+vim.api.nvim_create_user_command("Hex2Bin", function(args)
+    --create lookup table for octal to binary
+
+    local hex = args.fargs[1]
+    if not hex then
+        print("Please provide a hex value")
+        return
+    end
+
+    print("Binary value: " .. convertBin(tonumber(hex, 16)))
+end, { nargs = 1, desc = "Convert hex to binary" })
+
+vim.api.nvim_create_user_command("Hex2Dec", function(args)
+    local hex = args.fargs[1]
+    if not hex then
+        print("Please provide a hex value")
+        return
+    end
+
+    local dec = tonumber(hex, 16)
+    print("Decimal value: " .. dec)
+end, { nargs = 1, desc = "Convert hex to decimal" })
+
+vim.api.nvim_create_user_command("Dec2Bin", function(args)
+    local dec = args.fargs[1]
+    if not dec then
+        print("Please provide a decimal value")
+        return
+    end
+
+    print("Binary value " .. convertBin(tonumber(dec)))
+end, { nargs = 1, desc = "Convert decimal to binary" })
