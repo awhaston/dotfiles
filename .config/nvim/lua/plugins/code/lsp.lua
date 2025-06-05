@@ -18,7 +18,37 @@ return {
 
             lspconfig.phpactor.setup {}
             lspconfig.svelte.setup {}
+            lspconfig.arduino_language_server.setup {
+                cmd = {
+                    "arduino-language-server",
+                    "-cli-config",
+                    "~/.arduino15/arduino-cli.yaml",
+                    "-cli",
+                    "arduino-cli",
+                    "-clangd",
+                    "clangd",
+                    "-fqbn",
+                    "arduino:renesas_uno:unor4wifi",
+                },
+                filetypes = { "arduino" },
+                root_dir = function(fname)
+                    return lspconfig.util.root_pattern("platformio.ini")(fname) or
+                        lspconfig.util.root_pattern(".git")(fname) or
+                        lspconfig.util.path.dirname(fname)
+                end,
+            }
 
+            vim.lsp.config('rust_analyzer', {
+                settings = {
+                    ['rust-analyzer'] = {
+                        diagnostics = {
+                            enable = false,
+                        }
+                    }
+                }
+            })
+
+            vim.lsp.enable('rust_analyzer')
 
             lspconfig.cssls.setup({
                 capabilities = capabilities,
