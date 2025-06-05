@@ -6,6 +6,8 @@ opt.relativenumber = true
 
 -- Search
 opt.inccommand = "split"
+opt.hlsearch = false
+opt.incsearch = true
 
 -- Tabs
 opt.tabstop = 4
@@ -15,11 +17,9 @@ opt.expandtab = true
 opt.smartindent = true
 opt.wrap = false
 
--- Search
-opt.hlsearch = false
-opt.incsearch = true
-
-opt.scrolloff = 8
+-- Scrolling
+opt.sidescrolloff = 16
+opt.scrolloff = 16
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
