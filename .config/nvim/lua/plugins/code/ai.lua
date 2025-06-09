@@ -15,6 +15,7 @@ return {
             ['java'] = true,
             ['go'] = true,
             ['rust'] = true,
+            ['php'] = true,
         }
     end,
 }
