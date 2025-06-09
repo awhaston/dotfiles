@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+-- Cursor
+vim.opt.guicursor = "n-v-i-c:block-Cursor"
+
 -- Line numbers
 opt.nu = true
 opt.relativenumber = true
