@@ -1,0 +1,103 @@
+# Neomutt configuration for iCloud with multiple aliases
+source ./colors
+
+# Basic settings
+set use_from = yes
+set envelope_from = yes
+set editor = "nvim +/^$ +startinsert +':set spell' +':set textwidth=72'"
+set mark_old = yes
+set mime_forward = no
+
+# Folders
+set folder = "~/Mail/Personal"
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set postponed = "+Drafts"
+set trash = "+Trash"
+
+# Maildir settings
+set mbox_type = Maildir
+set header_cache = "~/.cache/neomutt/headers"
+set message_cachedir = "~/.cache/neomutt/bodies"
+set certificate_file = "~/.cache/neomutt/certificates"
+
+# Create cache directories
+set tmpdir = "~/.cache/neomutt/temp"
+
+# SMTP
+set sendmail = "/opt/homebrew/bin/msmtp"
+set sendmail_wait = 0
+set copy = yes
+
+# Security
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+# Sidebar
+set sidebar_visible = yes
+set sidebar_width = 25
+set sidebar_short_path = yes
+set sidebar_folder_indent = yes
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats = yes
+
+# Source Accounts
+source ./private/personal
+
+
+# Key bindings
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next  
+bind index,pager o sidebar-open
+bind index,pager \Cp sidebar-prev-new
+bind index,pager \Cn sidebar-next-new
+bind index,pager B sidebar-toggle-visible
+
+# Sync macro
+macro index,pager \Cr "<shell-escape>offlineimap -u quiet -q -o -1 &<enter>" "Sync IMAP"
+startup-hook 'push "<shell-escape>offlineimap -u quiet -o -1 &<enter>"'
+shutdown-hook 'push "<shell-escape>offlineimap -u quiet -o -1 &<enter>"'
+timeout-hook 'push "<shell-escape>offlineimap -u quiet -o -1 &<enter>"'
+
+# General settings
+set sort = threads
+set sort_aux = reverse-date
+set date_format = "%m/%d %I:%M%p"
+set index_format = "%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
+set pager_index_lines = 6
+set pager_context = 3
+set pager_stop = yes
+set menu_scroll = yes
+set tilde = yes
+set markers = no
+set wait_key = no # for syncing
+
+# Compose settings
+set edit_headers = yes
+set fast_reply = yes
+set askcc = yes
+set fcc_attach = yes
+set forward_format = "Fwd: %s"
+set forward_decode = yes
+set attribution = "On %d, %n wrote:"
+set reply_to = yes
+set reverse_name = yes
+set include = yes
+set forward_quote = yes
+set charset = "utf-8"
+set send_charset = "utf-8"
+
+# Security
+set crypt_use_gpgme = yes
+set crypt_autosign = no
+set crypt_verify_sig = yes
+set crypt_replysign = yes
+set crypt_replyencrypt = yes
+set crypt_replysignencrypted = yes
+
+# HTML email
+set mailcap_path = ~/.config/neomutt/mailcap
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+# vim: syntax=neomuttrc

@@ -1,0 +1,19 @@
+# General
+color attachment red default
+color message brightred default
+color error brightred default
+color indicator black yellow
+color tree yellow default
+color markers red default
+color search default green
+color tilde brightmagenta default
+color index red default ~T
+color index brightred default ~D
+
+# Colors for sidebar
+color sidebar_divider color8 default
+color sidebar_new color10 default
+color sidebar_ordinary color7 default
+color sidebar_flagged color1 default
+
+# vim: syntax=neomuttrc
