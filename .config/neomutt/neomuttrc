@@ -44,7 +44,6 @@ set mail_check_stats = yes
 # Source Accounts
 source ./private/personal
 
-
 # Key bindings
 bind index,pager \Ck sidebar-prev
 bind index,pager \Cj sidebar-next  
@@ -55,9 +54,10 @@ bind index,pager B sidebar-toggle-visible
 
 # Sync macro
 macro index,pager \Cr "<shell-escape>offlineimap -u quiet -q -o -1 &<enter>" "Sync IMAP"
-startup-hook 'push "<shell-escape>offlineimap -u quiet -o -1 &<enter>"'
-shutdown-hook 'push "<shell-escape>offlineimap -u quiet -o -1 &<enter>"'
-timeout-hook 'push "<shell-escape>offlineimap -u quiet -o -1 &<enter>"'
+set timeout = 1
+startup-hook 'push "<enter-command>echo \"Starting sync..\".<enter><shell-escape>offlineimap -o -1<enter>"'
+shutdown-hook 'push "<enter-command>echo \"Starting sync..\".<enter><shell-escape>offlineimap -u quiet -o -1 &<enter>"'
+timeout-hook 'push "<enter-command>echo \"Starting sync..\".<enter><shell-escape>offlineimap -o -1<enter>"'
 
 # General settings
 set sort = threads
