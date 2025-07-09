@@ -7,6 +7,8 @@ export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 export DOTNET_ROOT="$PATH:/opt/homebrew/opt/dotnet/libexec"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.composer/vendor/bin" # PHP Composer
+export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # Prompt
 PS1="%n@%m %~ %# "
@@ -22,10 +24,21 @@ alias projects="cd ~/git"
 alias dotfiles="cd ~/dotfiles"
 alias ll="ls -al"
 alias -g lg="lazygit"
-alias -g cls="clear && ls"
+# alias -g cls="clear && ls"
 alias -g cll="clear && ll"
 
 alias sa='source ~/.zshrc;echo "ZSH aliases sourced."'
+
+cll
+{
+    clear
+    ll
+}
+
+cls() {
+    clear
+    ls
+}
 
 ##########################################################
 
