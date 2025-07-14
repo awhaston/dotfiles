@@ -53,11 +53,8 @@ bind index,pager \Cn sidebar-next-new
 bind index,pager B sidebar-toggle-visible
 
 # Sync macro
-macro index,pager \Cr "<shell-escape>offlineimap -u quiet -q -o -1 &<enter>" "Sync IMAP"
-set timeout = 1
-startup-hook 'push "<enter-command>echo \"Starting sync..\".<enter><shell-escape>offlineimap -o -1<enter>"'
-shutdown-hook 'push "<enter-command>echo \"Starting sync..\".<enter><shell-escape>offlineimap -u quiet -o -1 &<enter>"'
-timeout-hook 'push "<enter-command>echo \"Starting sync..\".<enter><shell-escape>offlineimap -o -1<enter>"'
+macro index,pager \Cr "<shell-escape>mbsync -a<enter>" "Sync IMAP"
+# startup-hook 'push "<enter-command>echo \"Starting sync..\".<enter><shell-escape>mbsync personal<enter>"'
 
 # General settings
 set sort = threads
