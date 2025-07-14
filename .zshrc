@@ -25,19 +25,40 @@ alias dotfiles="cd ~/dotfiles"
 alias ll="ls -al"
 alias -g lg="lazygit"
 # alias -g cls="clear && ls"
-alias -g cll="clear && ll"
+# alias -g cll="clear && ll"
 
 alias sa='source ~/.zshrc;echo "ZSH aliases sourced."'
 
-cll
+function mkcd() 
 {
-    clear
-    ll
+    # Create a directory and enter it
+    mkdir -p "$1" && cd "$1"
 }
 
-cls() {
-    clear
-    ls
+function up() 
+{
+    # Go up n directories
+    local d=""
+    limit=$1
+    for ((i=1 ; i <= limit ; i++))
+    do
+        d=$d/..
+    done
+    d=$(echo $d | sed 's/^\///')
+    if [ -z "$d" ]; then
+        d=..
+    fi
+    cd $d
+}
+
+function cll()
+{
+    clear && ls -al
+}
+
+function cls() 
+{
+    clear && ls
 }
 
 ##########################################################
