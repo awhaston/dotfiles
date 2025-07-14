@@ -1,11 +1,13 @@
-
+#
+# General settings
+#
 mouse-hide-while-typing = true
 
 #
 # Theme settings
 #
 
-theme = Broadcast
+theme = rasmus-tty
 
 #
 # Window settings
@@ -31,4 +33,5 @@ font-size = 18
 #
 cursor-style = block
 #cursor-style-blink = false
+shell-integration = zsh
 shell-integration-features = no-cursor
