@@ -17,6 +17,7 @@ require("options")
 require("commands")
 require("terminal")
 require("prose")
+require("email")
 require("lazy").setup({
     { import = "plugins.ui" },
     { import = "plugins.code" },
