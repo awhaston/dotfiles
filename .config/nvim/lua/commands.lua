@@ -82,3 +82,29 @@ vim.api.nvim_create_user_command("Dec2Bin", function(args)
 
     print("Binary value " .. convertBin(tonumber(dec)))
 end, { nargs = 1, desc = "Convert decimal to binary" })
+
+-- Function to add % to the end of visually selected lines
+local function add_percent_to_selected_lines()
+    -- Get the start and end of visual selection
+    local start_line = vim.fn.line("'<")
+    local end_line = vim.fn.line("'>")
+
+    -- Get all the lines in the selection
+    local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, false)
+
+    -- Add % to the end of each line
+    for i, line in ipairs(lines) do
+        if line ~= "" and line:sub(-1) ~= "%" then
+            lines[i] = line .. "%"
+        end
+    end
+
+    -- Replace the lines in the buffer
+    vim.api.nvim_buf_set_lines(0, start_line - 1, end_line, false, lines)
+end
+
+-- Create the user command
+vim.api.nvim_create_user_command('LatexComment', add_percent_to_selected_lines, {
+    range = true,
+    desc = 'Add % to the end of all selected lines'
+})
