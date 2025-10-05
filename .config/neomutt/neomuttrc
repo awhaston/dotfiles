@@ -1,19 +1,14 @@
-# Neomutt configuration for iCloud with multiple aliases
 source ./colors
 
 # Basic settings
 set use_from = yes
 set envelope_from = yes
 set editor = "nvim"
-set mark_old = yes
+# set mark_old = yes
 set mime_forward = no
 
 # Folders
-set folder = "~/Mail/Personal"
-set spoolfile = "+INBOX"
-set record = "+Sent"
-set postponed = "+Drafts"
-set trash = "+Trash"
+source ./private/mailboxes
 
 # Maildir settings
 set mbox_type = Maildir
@@ -42,7 +37,7 @@ set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats = yes
 
 # Source Accounts
-source ./private/personal
+folder-hook "Personal" 'source ./private/personal' 
 
 # Key bindings
 bind index,pager K sidebar-prev
