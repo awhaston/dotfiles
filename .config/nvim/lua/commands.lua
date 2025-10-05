@@ -21,9 +21,9 @@ vim.api.nvim_create_user_command("Prettier", function(args)
         prettier_config = vim.fs.joinpath(vim.fn.stdpath("config"), "prettier.json")
     end
 
-    cmd = string.format("prettier --config \"%s\" \"%s\" --write", prettier_config, current_file)
+    local cmd = string.format("prettier --config \"%s\" \"%s\" --write", prettier_config, current_file)
 
-    exit_message = vim.fn.system(cmd)
+    local exit_message = vim.fn.system(cmd)
 
     if vim.v.shell_error ~= 0 then
         print("There was an error running prettier", exit_message)
@@ -33,22 +33,7 @@ vim.api.nvim_create_user_command("Prettier", function(args)
     end
 end, { nargs = "*", desc = "Run Prettier on the current file" })
 
-local oct2bin = {
-    ['0'] = '000',
-    ['1'] = '001',
-    ['2'] = '010',
-    ['3'] = '011',
-    ['4'] = '100',
-    ['5'] = '101',
-    ['6'] = '110',
-    ['7'] = '111'
-}
-local function getOct2bin(a) return oct2bin[a] end
-local function convertBin(n)
-    local s = string.format('%o', n)
-    s = s:gsub('.', getOct2bin)
-    return s
-end
+local utils = require("utils")
 
 vim.api.nvim_create_user_command("Hex2Bin", function(args)
     --create lookup table for octal to binary
@@ -59,7 +44,7 @@ vim.api.nvim_create_user_command("Hex2Bin", function(args)
         return
     end
 
-    print("Binary value: " .. convertBin(tonumber(hex, 16)))
+    print("Binary value: " .. utils.convertBin(tonumber(hex, 16)))
 end, { nargs = 1, desc = "Convert hex to binary" })
 
 vim.api.nvim_create_user_command("Hex2Dec", function(args)
@@ -80,10 +65,9 @@ vim.api.nvim_create_user_command("Dec2Bin", function(args)
         return
     end
 
-    print("Binary value " .. convertBin(tonumber(dec)))
+    print("Binary value " .. utils.convertBin(tonumber(dec)))
 end, { nargs = 1, desc = "Convert decimal to binary" })
 
--- Function to add % to the end of visually selected lines
 local function add_percent_to_selected_lines()
     -- Get the start and end of visual selection
     local start_line = vim.fn.line("'<")
@@ -103,7 +87,6 @@ local function add_percent_to_selected_lines()
     vim.api.nvim_buf_set_lines(0, start_line - 1, end_line, false, lines)
 end
 
--- Create the user command
 vim.api.nvim_create_user_command('LatexComment', add_percent_to_selected_lines, {
     range = true,
     desc = 'Add % to the end of all selected lines'
