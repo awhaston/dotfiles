@@ -18,11 +18,25 @@ xcode-select --install
 git clone https://github.com/awhaston/dotfiles.git ~/dotfiles
 ```
 
-- cd into new directory and run install-mac.sh
-
+- Install Homebrew
 ```
-cd ~/dotfiles
-sh install-mac.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+- Verify Homebrew
+```
+brew doctor
+brew --version
+```
+
+- Install Brewfile
+```
+brew bundle --file=<path to brewfile>
+```
+
+- Run install-mac.sh
+```
+./install-mac.sh
 ```
 
 ### Apps Installed via homebrew
