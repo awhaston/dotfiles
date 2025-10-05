@@ -8,6 +8,7 @@ mouse-hide-while-typing = true
 #
 
 theme = rasmus-tty
+font-family = RobotoMono Nerd Font
 
 #
 # Window settings
