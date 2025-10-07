@@ -20,6 +20,7 @@ require("commands")
 require("terminal")
 require("prose")
 require("email")
+require("netrw")
 require("lazy").setup({
     { import = "plugins.ui" },
     { import = "plugins.code" },
