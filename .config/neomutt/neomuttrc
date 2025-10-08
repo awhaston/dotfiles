@@ -4,7 +4,7 @@ source ./colors
 set use_from = yes
 set envelope_from = yes
 set editor = "nvim"
-# set mark_old = yes
+set mark_old = no
 set mime_forward = no
 
 # Folders
