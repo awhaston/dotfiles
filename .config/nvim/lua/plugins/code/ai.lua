@@ -16,6 +16,7 @@ return {
             ['go'] = true,
             ['rust'] = true,
             ['php'] = true,
+            ['sql'] = true,
         }
     end,
 }
