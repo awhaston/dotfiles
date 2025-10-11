@@ -2,8 +2,13 @@ return {
     {
         "awhaston/nvim-lspconfig",
         lazy = false,
+        dependencies = {
+            {
+                "awhaston/cmp-nvim-lsp",
+            },
+        },
         config = function()
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
             -- Rust
             vim.lsp.config('rust_analyzer', {
