@@ -65,6 +65,18 @@ return {
             -- PHP
             vim.lsp.config('phpactor', {})
             vim.lsp.enable('phpactor')
+            -- Make an autocommand to ignore .template.php files
+            vim.api.nvim_create_autocmd("LspAttach", {
+                callback = function(args)
+                    local client = vim.lsp.get_client_by_id(args.data.client_id)
+                    local bufname = vim.api.nvim_buf_get_name(args.buf)
+
+                    -- Check if buffer name ends with `.template.php`
+                    if bufname:match("%.template%.php$") then
+                        client.stop() -- immediately detach the LSP from this buffer
+                    end
+                end,
+            })
 
             -- Svelte
             vim.lsp.config('svelte', {})
