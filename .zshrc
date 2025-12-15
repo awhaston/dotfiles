@@ -1,14 +1,14 @@
 # Paths
-export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
-export PATH=$PATH:/Users/wyatthaston/.dotnet/tools
-export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
-export DOTNET_ROOT="$PATH:/opt/homebrew/opt/dotnet/libexec"
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.dotnet/tools" # dotnet
+export PATH="/opt/homebrew/sbin:$PATH" # Homebrew
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH" # Nodejs
+export DOTNET_ROOT="$PATH:/opt/homebrew/opt/dotnet/libexec" # dotnet
+export PATH="$PATH:$HOME/go/bin" # Go Binaries
+export PATH="$PATH:$HOME/bin" # Local Binaries
 export PATH="$PATH:$HOME/.composer/vendor/bin" # PHP Composer
-export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/usr/local/opt/libpq/bin:$PATH" # postgresql
 
 # Prompt
 PS1="%n@%m %~ %# "
