@@ -3,5 +3,6 @@ text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump %s; name
 application/pdf; open %s
 image/*; open %s
 application/msword; open %s
+application/ics; open %s
 application/vnd.openxmlformats-officedocument.wordprocessingml.document; open %s
 
