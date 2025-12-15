@@ -18,5 +18,8 @@ return {
             ['php'] = true,
             ['sql'] = true,
         }
+
+        -- Start with copilot disabled
+        vim.g.copilot_enabled = false
     end,
 }
