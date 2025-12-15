@@ -6,3 +6,21 @@ vim.keymap.set('n', '-', function()
     end
     vim.cmd('Explore ' .. path)
 end, { noremap = true, silent = true, desc = "Open netrw in current directory" })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "netrw",
+    callback = function()
+        vim.cmd([[
+      silent! 1,$g#^\.\./#m0
+      silent! 1,$g#^\./#m0
+    ]])
+    end
+})
+
+
+-- Netrw settings
+vim.g.netrw_list_hide = [[\.pyc$,\.DS_Store$,^\.git$,^node_modules$]]
+vim.g.netrw_hide = 1
+
+vim.g.netrw_sort_by = "name"
+vim.g.netrw_sort_sequence = [[^\.\./$,^\./$,[\/]$,*]]
