@@ -17,7 +17,7 @@
 (unless (package-installed-p 'company)
   (package-install 'company))
 
-;; Download Evil
+;; Download doom themes
 (unless (package-installed-p 'doom-themes)
   (package-install 'doom-themes))
 
