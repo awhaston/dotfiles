@@ -53,14 +53,17 @@ return {
             vim.lsp.enable('texlab')
 
             -- JavaScript/TypeScript
-            vim.lsp.config('tsserver', {
+            -- JavaScript/TypeScript
+            vim.lsp.config('ts_ls', {
+                capabilities = capabilities,
                 settings = {
                     completions = {
                         completeFunctionCalls = true,
                     },
                 },
+                filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
             })
-            vim.lsp.enable('tsserver')
+            vim.lsp.enable('ts_ls')
 
             -- PHP
             vim.lsp.config('phpactor', {})
