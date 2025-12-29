@@ -10,6 +10,9 @@ export PATH="$PATH:$HOME/bin" # Local Binaries
 export PATH="$PATH:$HOME/.composer/vendor/bin" # PHP Composer
 export PATH="/usr/local/opt/libpq/bin:$PATH" # postgresql
 
+# Source any local env variables
+[ -f "$HOME/.local.env" ] && source "$HOME/.local.env"
+
 # Prompt
 PS1="%n@%m %~ %# "
 
