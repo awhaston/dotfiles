@@ -38,8 +38,6 @@ brew "neovim"
 brew "newsboat"
 # Port scanning utility for large networks
 brew "nmap"
-# Platform built on V8 to build network applications
-brew "node@20"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Package compiler and linker metadata toolkit
@@ -70,3 +68,5 @@ cask "font-cousine-nerd-font"
 cask "font-roboto-mono-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Node Version Manager
+brew "nvm"
