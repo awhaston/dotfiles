@@ -19,6 +19,10 @@ _G.add_plugin = function(spec, opts, setup)
     setup()
 end
 
+
+vim.api.nvim_create_user_command("UpdatePlugins", function(args) vim.pack.update() end,
+    { nargs = 0, desc = "Run Pack Update" })
+
 require("plugins.lsp")
 require("plugins.code")
 require("plugins.ui")

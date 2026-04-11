@@ -1,9 +1,9 @@
 add_plugin(
-    { src  = "awhaston/nvim-lspconfig" },
+    { src = "awhaston/nvim-lspconfig" },
     {
         deps = { src = "awhaston/cmp-nvim-lsp" }
     },
-    function ()
+    function()
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
         -- Rust
@@ -180,7 +180,7 @@ add_plugin(
 add_plugin(
     { src = "awhaston/nvim-cmp" },
     {},
-    function ()
+    function()
         local cmp = require("cmp")
 
         require("snippets").register_cmp_source()
@@ -214,8 +214,8 @@ add_plugin(
 
 add_plugin(
     { src = "awhaston/none-ls.nvim" },
-    {},
-    function ()
+    { deps = { src = "awhaston/plenary.nvim" } },
+    function()
         local null_ls = require("null-ls")
         local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
         null_ls.setup({
