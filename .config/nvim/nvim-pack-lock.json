@@ -1,0 +1,67 @@
+{
+  "plugins": {
+    "cmp-nvim-lsp": {
+      "rev": "a8912b88ce488f411177fc8aed358b04dc246d7b",
+      "src": "https://github.com/awhaston/cmp-nvim-lsp"
+    },
+    "compile-mode.nvim": {
+      "rev": "d7b1e165f7e90b8152c74953fd06d41e849e2608",
+      "src": "https://github.com/awhaston/compile-mode.nvim",
+      "version": "'main'"
+    },
+    "copilot.vim": {
+      "rev": "178d0746327521bac3aa6bec399a879563e119d3",
+      "src": "https://github.com/awhaston/copilot.vim"
+    },
+    "gitsigns.nvim": {
+      "rev": "1ee5c1fd068c81f9dd06483e639c2aa4587dc197",
+      "src": "https://github.com/awhaston/gitsigns.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "3c4ee4eb977372b849d7386f9b1014d9ebc48e51",
+      "src": "https://github.com/awhaston/lualine.nvim"
+    },
+    "mini.pairs": {
+      "rev": "0f872ead6d4e860d1a1ddf0bf429359cb9909810",
+      "src": "https://github.com/awhaston/mini.pairs"
+    },
+    "none-ls.nvim": {
+      "rev": "7bae11d943eddb31d1dfb6fd5238ba0fb0a4da74",
+      "src": "https://github.com/awhaston/none-ls.nvim"
+    },
+    "nvim-cmp": {
+      "rev": "188ddadc2913af812c45a84d418233e41724fd3b",
+      "src": "https://github.com/awhaston/nvim-cmp"
+    },
+    "nvim-lspconfig": {
+      "rev": "ac98db2f9f06a56498ec890a96928774eae412c3",
+      "src": "https://github.com/awhaston/nvim-lspconfig"
+    },
+    "nvim-treesitter": {
+      "rev": "763f1e650b91aa951495e709d61597d1222dba65",
+      "src": "https://github.com/awhaston/nvim-treesitter",
+      "version": "'main'"
+    },
+    "nvim-web-devicons": {
+      "rev": "66379d1404c996d168264e3f96fcc413e6c83d38",
+      "src": "https://github.com/awhaston/nvim-web-devicons"
+    },
+    "oil.nvim": {
+      "rev": "fa86546282923a0c1674a02ae291a9d1e9f1e341",
+      "src": "https://github.com/awhaston/oil.nvim",
+      "version": "'master'"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "rasmus": {
+      "rev": "49f7ee7bf3eb00db52c77f84b15bc69f318bafc1",
+      "src": "https://github.com/awhaston/rasmus.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "ccfb47bb460917d791939564a031d3a88d136547",
+      "src": "https://github.com/awhaston/telescope.nvim"
+    }
+  }
+}

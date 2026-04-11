@@ -1,2 +1,2 @@
-vim.cmd([[colorscheme rasmus]])
-vim.opt.termguicolors = true
+-- vim.cmd([[colorscheme rasmus]])
+-- vim.opt.termguicolors = true
