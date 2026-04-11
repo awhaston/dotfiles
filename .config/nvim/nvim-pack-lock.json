@@ -1,5 +1,10 @@
 {
   "plugins": {
+    "bufferline.nvim": {
+      "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
+      "src": "https://github.com/awhaston/bufferline.nvim",
+      "version": "'main'"
+    },
     "cmp-nvim-lsp": {
       "rev": "cbc7b02bb99fae35cb42f514762b89b5126651ef",
       "src": "https://github.com/awhaston/cmp-nvim-lsp"
@@ -62,6 +67,10 @@
     "telescope.nvim": {
       "rev": "b4ea4c2a17fea78f35a8140aefbbc7c2cd87862d",
       "src": "https://github.com/awhaston/telescope.nvim"
+    },
+    "which-key.nvim": {
+      "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
+      "src": "https://github.com/awhaston/which-key.nvim"
     }
   }
 }

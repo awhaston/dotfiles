@@ -181,7 +181,6 @@ add_plugin(
 add_plugin(
     { src = "awhaston/bufferline.nvim", version = "main" },
     {
-        enabled = false,
         deps = { src = "awhaston/nvim-web-devicons" }
     },
     function()
@@ -200,8 +199,6 @@ add_plugin(
         map("n", "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", { desc = "Delete Buffers to the Left" })
         map("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev Buffer" })
         map("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
-        map("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev Buffer" })
-        map("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
 
         -- Fix bufferline when restoring a session
         vim.api.nvim_create_autocmd("BufAdd", {
@@ -211,5 +208,15 @@ add_plugin(
                 end)
             end,
         })
+    end
+)
+
+add_plugin(
+    { src = "awhaston/which-key.nvim" },
+    {},
+    function()
+        vim.o.timeout = true
+        vim.o.timeoutlen = 300
+        require("which-key").setup({})
     end
 )
