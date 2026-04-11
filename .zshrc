@@ -7,6 +7,9 @@ export PATH="$PATH:$HOME/go/bin" # Go Binaries
 export PATH="$PATH:$HOME/bin" # Local Binaries
 export PATH="$PATH:$HOME/.composer/vendor/bin" # PHP Composer
 export PATH="/usr/local/opt/libpq/bin:$PATH" # postgresql
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+export EDITOR="nvim"
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
