@@ -43,7 +43,7 @@ add_plugin(
             end,
         })
 
-        vim.keymap.set("n", "<leader>cc", ":Compile<CR>", { desc = "Fullscreen windows" })
+        vim.keymap.set("n", "<leader>cc", ":Compile<CR>", { desc = "Compile mode" })
     end
 )
 
