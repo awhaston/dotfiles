@@ -1,5 +1,5 @@
 add_plugin(
-    { src = "awhaston/nvim-treesitter", version = "main" },
+    { src = "wyattdotdev/nvim-treesitter", version = "main" },
     {},
     function()
         local ts = require("nvim-treesitter")
@@ -43,8 +43,8 @@ add_plugin(
 )
 
 add_plugin(
-    { src = "awhaston/telescope.nvim" },
-    { deps = { src = "awhaston/plenary.nvim" } },
+    { src = "wyattdotdev/telescope.nvim" },
+    { deps = { src = "wyattdotdev/plenary.nvim" } },
     function()
         local builtin = require("telescope.builtin")
         local actions = require("telescope.actions")
@@ -100,9 +100,9 @@ add_plugin(
 )
 
 add_plugin(
-    { src = "awhaston/oil.nvim", version = "master" },
+    { src = "wyattdotdev/oil.nvim", version = "master" },
     {
-        deps = { src = "awhaston/nvim-web-devicons" },
+        deps = { src = "wyattdotdev/nvim-web-devicons" },
     },
     function()
         require("oil").setup({
@@ -121,9 +121,9 @@ add_plugin(
 )
 
 add_plugin(
-    { src = 'awhaston/lualine.nvim' },
+    { src = 'wyattdotdev/lualine.nvim' },
     {
-        deps = { src = 'awhaston/nvim-web-devicons' }
+        deps = { src = 'wyattdotdev/nvim-web-devicons' }
     },
     function()
         options = {
@@ -134,7 +134,7 @@ add_plugin(
 )
 
 add_plugin(
-    { src = "awhaston/gitsigns.nvim" },
+    { src = "wyattdotdev/gitsigns.nvim" },
     {},
     function()
         require("gitsigns").setup({
@@ -172,7 +172,7 @@ add_plugin(
 )
 
 add_plugin(
-    { src = "awhaston/rasmus.nvim", name = "rasmus" },
+    { src = "wyattdotdev/rasmus.nvim", name = "rasmus" },
     {},
     function()
         vim.cmd([[colorscheme rasmus]])
@@ -181,9 +181,9 @@ add_plugin(
 )
 
 add_plugin(
-    { src = "awhaston/bufferline.nvim", version = "main" },
+    { src = "wyattdotdev/bufferline.nvim", version = "main" },
     {
-        deps = { src = "awhaston/nvim-web-devicons" }
+        deps = { src = "wyattdotdev/nvim-web-devicons" }
     },
     function()
         map = vim.keymap.set
@@ -214,7 +214,7 @@ add_plugin(
 )
 
 add_plugin(
-    { src = "awhaston/which-key.nvim" },
+    { src = "wyattdotdev/which-key.nvim" },
     {},
     function()
         vim.o.timeout = true

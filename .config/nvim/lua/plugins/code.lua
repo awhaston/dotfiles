@@ -1,4 +1,4 @@
-add_plugin({ src = "awhaston/copilot.vim" },
+add_plugin({ src = "wyattdotdev/copilot.vim" },
     {},
     function()
         vim.g.copilot_filetypes = {
@@ -23,7 +23,7 @@ add_plugin({ src = "awhaston/copilot.vim" },
 )
 
 add_plugin(
-    { src = "awhaston/compile-mode.nvim", version = "main" },
+    { src = "wyattdotdev/compile-mode.nvim", version = "main" },
     { deps = { src = "nvim-lua/plenary.nvim" } },
     function()
         vim.g.compile_mode = {
@@ -48,7 +48,7 @@ add_plugin(
 )
 
 add_plugin(
-    { src = "awhaston/mini.pairs" },
+    { src = "wyattdotdev/mini.pairs" },
     {},
     function()
         require("mini.pairs").setup()

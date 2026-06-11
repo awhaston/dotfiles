@@ -1,7 +1,7 @@
 add_plugin(
-    { src = "awhaston/nvim-lspconfig" },
+    { src = "wyattdotdev/nvim-lspconfig" },
     {
-        deps = { src = "awhaston/cmp-nvim-lsp" }
+        deps = { src = "wyattdotdev/cmp-nvim-lsp" }
     },
     function()
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -174,11 +174,24 @@ add_plugin(
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
         vim.keymap.set("n", "<leader>cD", vim.diagnostic.setloclist, { desc = "Get Diagnostic List" })
         vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "Restart LSP Servers" })
+        vim.api.nvim_create_autocmd("LspAttach", {
+            group = vim.api.nvim_create_augroup("lsp_attach_config", { clear = true }),
+            desc = "Setup on LspAttach",
+            callback = function(args)
+                local client = vim.lsp.get_client_by_id(args.data.client_id)
+                if client:supports_method("textDocument/foldingRange") then
+                    local win = vim.api.nvim_get_current_win()
+                    vim.wo[win][0].foldmethod = "expr"
+                    vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+                    vim.wo[win][0].foldtext = ""
+                end
+            end,
+        })
     end
 )
 
 add_plugin(
-    { src = "awhaston/nvim-cmp" },
+    { src = "wyattdotdev/nvim-cmp" },
     {},
     function()
         local cmp = require("cmp")
@@ -213,8 +226,8 @@ add_plugin(
 )
 
 add_plugin(
-    { src = "awhaston/none-ls.nvim" },
-    { deps = { src = "awhaston/plenary.nvim" } },
+    { src = "wyattdotdev/none-ls.nvim" },
+    { deps = { src = "wyattdotdev/plenary.nvim" } },
     function()
         local null_ls = require("null-ls")
         local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
