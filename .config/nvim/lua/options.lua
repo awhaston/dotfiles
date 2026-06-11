@@ -27,3 +27,11 @@ opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
 opt.updatetime = 50
+
+-- Folding
+vim.o.foldenable = true
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldtext = ""
+vim.o.fillchars = "foldclose:󰅂,foldopen:󰅀"
+vim.o.foldlevelstart = 99
