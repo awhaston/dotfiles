@@ -1,0 +1,87 @@
+{
+  "_comment_settings": "Copy the keys below (except 'keybindings') into your VSCode settings.json",
+  "_comment_keybindings": "Copy the 'keybindings' array into your VSCode keybindings.json",
+
+  "vim.leader": "<space>",
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // ── Clipboard ──────────────────────────────────────────────────────────────
+    { "before": ["<leader>", "y"], "commands": ["editor.action.clipboardCopyAction"] },
+
+    // ── Buffer management ──────────────────────────────────────────────────────
+    { "before": ["<leader>", "b", "d"], "commands": ["workbench.action.closeActiveEditor"] },
+    { "before": ["<leader>", "b", "D"], "commands": ["workbench.action.revertAndCloseActiveEditor"] },
+    { "before": ["<leader>", "b", "p"], "commands": ["workbench.action.pinEditor"] },
+    { "before": ["<leader>", "b", "P"], "commands": ["workbench.action.unpinEditor"] },
+    { "before": ["<leader>", "b", "o"], "commands": ["workbench.action.closeOtherEditors"] },
+    { "before": ["<leader>", "b", "r"], "commands": ["workbench.action.closeEditorsToTheRight"] },
+    { "before": ["<leader>", "b", "l"], "commands": ["workbench.action.closeEditorsToTheLeft"] },
+    { "before": ["<S-h>"],             "commands": ["workbench.action.previousEditor"] },
+    { "before": ["<S-l>"],             "commands": ["workbench.action.nextEditor"] },
+
+    // ── Window management ──────────────────────────────────────────────────────
+    { "before": ["<leader>", "w", "f"], "commands": ["workbench.action.toggleMaximizeEditorGroup"] },
+    { "before": ["<leader>", "w", "F"], "commands": ["workbench.action.evenEditorWidths"] },
+    { "before": ["<leader>", "w", "h"], "commands": ["workbench.action.splitEditorDown"] },
+    { "before": ["<leader>", "w", "v"], "commands": ["workbench.action.splitEditor"] },
+    { "before": ["<leader>", "w", "x"], "commands": ["workbench.action.closeActiveEditor"] },
+    { "before": ["<leader>", "w", "X"], "commands": ["workbench.action.revertAndCloseActiveEditor"] },
+
+    // ── Telescope (fuzzy finder) ───────────────────────────────────────────────
+    { "before": ["<leader>", "f", "f"],  "commands": ["workbench.action.quickOpen"] },
+    { "before": ["<leader>", "<leader>"],"commands": ["workbench.action.showAllEditors"] },
+    { "before": ["<leader>", "f", "g"],  "commands": ["workbench.action.findInFiles"] },
+    { "before": ["<leader>", "f", "r"],  "commands": ["editor.action.referenceSearch.trigger"] },
+    { "before": ["<leader>", "f", "i"],  "commands": ["editor.action.goToImplementation"] },
+    { "before": ["<leader>", "f", "t"],  "commands": ["editor.action.goToTypeDefinition"] },
+    { "before": ["<leader>", "f", "d"],  "commands": ["workbench.action.showErrorsWarnings"] },
+    { "before": ["<leader>", "f", "D"],  "commands": ["workbench.actions.view.problems"] },
+    { "before": ["<leader>", "f", "h"],  "commands": ["workbench.action.openGlobalKeybindingsFile"] },
+
+    // ── File explorer (Oil equivalent) ────────────────────────────────────────
+    { "before": ["-"], "commands": ["workbench.files.action.showActiveFileInExplorer"] },
+
+    // ── Git / GitSigns ────────────────────────────────────────────────────────
+    { "before": ["]", "h"], "commands": ["workbench.action.editor.nextChange"] },
+    { "before": ["[", "h"], "commands": ["workbench.action.editor.previousChange"] },
+    { "before": ["<leader>", "g", "h", "s"], "commands": ["git.stageSelectedRanges"] },
+    { "before": ["<leader>", "g", "h", "r"], "commands": ["git.revertSelectedRanges"] },
+    { "before": ["<leader>", "g", "S"],      "commands": ["git.stageAll"] },
+    { "before": ["<leader>", "g", "u"],      "commands": ["git.unstageSelectedRanges"] },
+    { "before": ["<leader>", "g", "p"],      "commands": ["editor.action.dirtydiff.next"] },
+    { "before": ["<leader>", "g", "b"],      "commands": ["gitlens.toggleFileBlame"] },
+    { "before": ["<leader>", "g", "d"],      "commands": ["editor.action.dirtydiff.next"] },
+    { "before": ["<leader>", "g", "D"],      "commands": ["workbench.action.compareEditor.nextChange"] },
+
+    // ── LSP ───────────────────────────────────────────────────────────────────
+    { "before": ["K"],                  "commands": ["editor.action.showHover"] },
+    { "before": ["g", "d"],             "commands": ["editor.action.revealDefinition"] },
+    { "before": ["<leader>", "g", "i"], "commands": ["editor.action.goToImplementation"] },
+    { "before": ["<leader>", "g", "r"], "commands": ["editor.action.referenceSearch.trigger"] },
+    { "before": ["<leader>", "c", "a"], "commands": ["editor.action.quickFix"] },
+    { "before": ["<leader>", "c", "d"], "commands": ["editor.action.showHover"] },
+    { "before": ["]", "d"],             "commands": ["editor.action.marker.next"] },
+    { "before": ["[", "d"],             "commands": ["editor.action.marker.prev"] },
+    { "before": ["<leader>", "c", "D"], "commands": ["workbench.actions.view.problems"] },
+    { "before": ["<leader>", "l", "r"], "commands": ["workbench.action.restartExtensionHost"] },
+    { "before": ["<leader>", "c", "f"], "commands": ["editor.action.formatDocument"] }
+  ],
+
+  "vim.visualModeKeyBindingsNonRecursive": [
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["<leader>", "y"],           "commands": ["editor.action.clipboardCopyAction"] },
+    { "before": ["<leader>", "g", "h", "s"], "commands": ["git.stageSelectedRanges"] },
+    { "before": ["<leader>", "g", "h", "r"], "commands": ["git.revertSelectedRanges"] }
+  ],
+
+  "keybindings": [
+    { "key": "ctrl+h", "command": "workbench.action.focusLeftGroup",  "when": "editorTextFocus" },
+    { "key": "ctrl+j", "command": "workbench.action.focusBelowGroup", "when": "editorTextFocus" },
+    { "key": "ctrl+k", "command": "workbench.action.focusAboveGroup", "when": "editorTextFocus" },
+    { "key": "ctrl+l", "command": "workbench.action.focusRightGroup", "when": "editorTextFocus" },
+    { "key": "ctrl+.", "command": "workbench.action.increaseViewHeight", "when": "editorTextFocus" },
+    { "key": "ctrl+,", "command": "workbench.action.decreaseViewHeight", "when": "editorTextFocus" },
+    { "key": "escape escape", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus" }
+  ]
+}

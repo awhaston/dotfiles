@@ -2,6 +2,7 @@ install-mac.sh
 .DS_Store
 scripts
 misc
+vscode
 
 # Comments and blank lines are allowed
 

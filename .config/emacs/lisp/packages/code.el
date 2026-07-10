@@ -1,0 +1,67 @@
+;; Magit — Git interface
+(use-package magit
+  :defer t
+  :init
+  (with-eval-after-load 'evil
+    (evil-define-key 'normal 'global (kbd "<leader>gg") #'magit-status)
+    (evil-define-key 'normal 'global (kbd "<leader>gb") #'magit-blame-addition))
+  :config
+  (evil-define-key 'normal magit-mode-map (kbd "C-h") #'windmove-left)
+  (evil-define-key 'normal magit-mode-map (kbd "C-j") #'windmove-down)
+  (evil-define-key 'normal magit-mode-map (kbd "C-k") #'windmove-up)
+  (evil-define-key 'normal magit-mode-map (kbd "C-l") #'windmove-right))
+
+;; Compile mode (built-in, mirrors compile-mode.nvim)
+(use-package compile
+  :ensure nil
+  :config
+  (setq compilation-scroll-output t)
+  (setq compilation-ask-about-save nil)
+  (with-eval-after-load 'evil
+    (evil-define-key 'normal compilation-mode-map (kbd "[") #'previous-error)
+    (evil-define-key 'normal compilation-mode-map (kbd "]") #'next-error)
+    (evil-define-key 'normal 'global (kbd "<leader>cc") #'compile)))
+
+;; Auto pairs (mini.pairs equivalent)
+(electric-pair-mode 1)
+
+;; Language modes
+(use-package php-mode     :defer t)
+(use-package svelte-mode  :defer t)
+(use-package arduino-mode :defer t)
+(use-package markdown-mode
+  :defer t
+  :mode ("\\.md\\'" . markdown-mode))
+(use-package auctex
+  :defer t
+  :mode ("\\.tex\\'" . latex-mode))
+
+;; Treesitter — auto-install grammars (nvim-treesitter equivalent)
+(use-package treesit-auto
+  :config
+  (setq treesit-auto-install t)
+  (global-treesit-auto-mode))
+
+;; Map file extensions to ts modes
+(setq auto-mode-alist
+      (append '(("\\.js\\'"   . js-ts-mode)
+                ("\\.jsx\\'"  . tsx-ts-mode)
+                ("\\.ts\\'"   . typescript-ts-mode)
+                ("\\.tsx\\'"  . tsx-ts-mode)
+                ("\\.go\\'"   . go-ts-mode)
+                ("\\.rs\\'"   . rust-ts-mode)
+                ("\\.py\\'"   . python-ts-mode)
+                ("\\.lua\\'"  . lua-ts-mode)
+                ("\\.css\\'"  . css-ts-mode)
+                ("\\.json\\'" . json-ts-mode)
+                ("\\.yaml\\'" . yaml-ts-mode)
+                ("\\.yml\\'"  . yaml-ts-mode)
+                ("\\.c\\'"   . c-ts-mode)
+                ("\\.h\\'"   . c-ts-mode)
+                ("\\.cpp\\'" . c++-ts-mode)
+                ("\\.cc\\'"  . c++-ts-mode)
+                ("\\.cxx\\'" . c++-ts-mode)
+                ("\\.hpp\\'" . c++-ts-mode))
+              auto-mode-alist))
+
+(provide 'code)

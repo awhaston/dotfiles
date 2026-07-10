@@ -1,3 +1,21 @@
+# Auto-generated state files
+tramp
+auto-save-list/
+transient/
+
+# Compiled Lisp
+*.elc
+
+# Package directory (installed, not source)
+elpa/
+
+# Tree-sitter grammars (compiled binaries)
 tree-sitter/
-*ido*
-projects
+
+# Backup and lock files
+*~
+\#*\#
+.\#*
+
+# Org mode
+.org-id-locations
