@@ -78,8 +78,8 @@
 
 ;; Formatter (none-ls equivalent)
 (use-package apheleia
+  :hook (go-ts-mode . apheleia-mode)
   :config
-  (apheleia-global-mode +1)
   (setf (alist-get 'js-ts-mode apheleia-mode-alist) nil)
   (setf (alist-get 'lua-ts-mode apheleia-mode-alist) '(stylua))
   (setf (alist-get 'go-ts-mode apheleia-mode-alist) '(goimports gofmt)))
