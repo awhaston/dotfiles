@@ -45,6 +45,9 @@
 ;; Open a dired buffer on the home directory instead of *scratch*
 (setq initial-buffer-choice (lambda () (dired "~/")))
 
+;; Delete by moving to trash
+(setq-default delete-by-moving-to-trash t)
+
 ;; Remove UI chrome
 (menu-bar-mode -1)
 (tool-bar-mode -1)
